@@ -1,16 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './searchBar.css'
 
-const searchBar = () => {
+const SearchBar = ({onSubmit}) => {
+  const [search, setSearch] = useState('');
+
   return (
-    <div>
-        <form>
-            <input className='searchBar' type='text' placeholder=''/>
+        <form onSubmit={onSubmit}>
+            <input className='searchBar' type='text' onChange={(e) => setSearch(e.target.value)}/>
             <br />
-            <button className='searchButton'>Search</button>
+            <button type='submit' className='searchButton'>Search</button>
         </form>
-    </div>
   )
 }
 
-export default searchBar
+export default SearchBar

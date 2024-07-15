@@ -1,8 +1,11 @@
 .searchResults{
     background-color: rgb(20, 5, 11);
     width: 350px;
-    min-height: 500px;
+    min-height: 650px;
     border-radius: 7px;
+    max-height: 650px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 h2{
     margin-left: 20px;

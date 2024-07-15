@@ -1,0 +1,47 @@
+export const list = [
+    {
+        name:'cupid',
+        artist:'tuPtm',
+        album:'LosWachiturros'
+    },
+    {
+        name:'Summer',
+        artist:'tuVieja',
+        album:'LosWachiturros'
+    },
+    {
+        name:'rapDelSida',
+        artist:'tuMama',
+        album:'LosWachiturros'
+    },
+    {
+        name:'cupid',
+        artist:'tuPtm',
+        album:'LosWachiturros'
+    },
+    {
+        name:'cupid',
+        artist:'tuPtm',
+        album:'LosWachiturros'
+    },
+    {
+        name:'Summer',
+        artist:'tuVieja',
+        album:'LosWachiturros'
+    },
+    {
+        name:'rapDelSida',
+        artist:'tuMama',
+        album:'LosWachiturros'
+    },
+    {
+        name:'cupid',
+        artist:'tuPtm',
+        album:'LosWachiturros'
+    },
+    {
+        name:'Last',
+        artist:'noJoda',
+        album:'no sé de albums'
+    }
+];

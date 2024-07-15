@@ -4,7 +4,7 @@
   width: 100%;
 }
 .App{
-  height: 1000px;
+  height: 1200px;
   background-image: url('../../background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -23,9 +23,17 @@ h1{
 }
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   margin-top: 100px;
 }
-.container div {
-  margin: 0px 250px;
+::-webkit-scrollbar{
+  width: 5px;
+  margin-right: 10px;
+}
+::-webkit-scrollbar-track{
+  background: rgb(20, 5, 11);
+}
+::-webkit-scrollbar-thumb{
+  background: rgb(164, 77, 15);
+  border-radius: 5px;
 }

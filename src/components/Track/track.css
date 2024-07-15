@@ -1,0 +1,11 @@
+.track{
+    margin: 30px 20px;
+}
+.track p{
+    margin: 5px 0px;
+}
+.line{
+    background-color: rgba(235, 235, 235, 0.579);
+    min-height: 1px;
+    margin: 0px 10px 0px 0px;
+}
