@@ -29,7 +29,11 @@ function App() {
           setPlayList={setPlayList}
           playList={playList}
         />
-        <PlayList className="containerItem" playList={playList} />
+        <PlayList
+          className="containerItem"
+          playList={playList}
+          setPlayList={setPlayList}
+        />
       </div>
     </div>
   );
