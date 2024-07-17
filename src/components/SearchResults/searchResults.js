@@ -1,16 +1,22 @@
-import React from 'react';
-import './searchResults.css';
-import Track from '../Track/track';
+import React from "react";
+import "./searchResults.css";
+import Track from "../Track/track";
 
-const searchResults = (props) => {
+const SearchResults = ({ results, setPlayList, playList }) => {
   return (
-    <div className='searchResults'>
-        <h2>Results</h2>
-        {
-          props.results ? props.results.map((song) => <Track track={song}/>) : null
-        }
+    <div className="searchResults">
+      <h2>Results</h2>
+      {results &&
+        results.map((song) => (
+          <Track
+            track={song}
+            playList={playList}
+            addToPlayList={(track) => setPlayList([...playList, track])}
+            key={song.id}
+          />
+        ))}
     </div>
-  )
-}
+  );
+};
 
-export default searchResults
+export default SearchResults;

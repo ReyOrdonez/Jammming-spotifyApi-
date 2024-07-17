@@ -1,9 +1,12 @@
-.playList{
-    background-color: rgb(20, 5, 11);
-    width: 320px;
-    min-height: 650px;
-    border-radius: 7px;
+.playList {
+  background-color: rgb(20, 5, 11);
+  width: 320px;
+  min-height: 650px;
+  border-radius: 7px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 650px;
 }
-h2{
-    margin-left: 20px;
+h2 {
+  margin-left: 20px;
 }

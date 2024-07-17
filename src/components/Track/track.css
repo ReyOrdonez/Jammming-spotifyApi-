@@ -1,11 +1,23 @@
-.track{
-    margin: 30px 20px;
+.track {
+  margin: 30px 20px;
 }
-.track p{
-    margin: 5px 0px;
+.track p {
+  margin: 5px 0px;
 }
-.line{
-    background-color: rgba(235, 235, 235, 0.579);
-    min-height: 1px;
-    margin: 0px 10px 0px 0px;
+.line {
+  background-color: rgba(235, 235, 235, 0.579);
+  min-height: 1px;
+  margin: 0px 10px 0px 0px;
+}
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-container button {
+  background: url("../../add.png") no-repeat;
+  background-size: 45px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
 }
