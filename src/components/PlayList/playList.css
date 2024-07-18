@@ -10,3 +10,12 @@
 h2 {
   margin-left: 20px;
 }
+.playListName {
+  border-radius: 4px;
+  font-size: 18px;
+  border: none;
+  text-align: center;
+  margin: 0px 20px;
+  width: 90%;
+  background-color: rgb(220, 220, 220);
+}

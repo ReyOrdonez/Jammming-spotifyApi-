@@ -6,6 +6,8 @@ const PlayList = ({ playList, setPlayList }) => {
   return (
     <div className="playList">
       <h2>Play List</h2>
+      <input type="text" className="playListName" placeholder="Playlist Name" />
+
       {playList.map((track) => (
         <Track
           track={track}

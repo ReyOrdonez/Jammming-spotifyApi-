@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./track.css";
 
 const Track = ({ track, addToPlayList, removeFromPlayList }) => {
+  const [hiddenClass, setHiddenClass] = useState("hiddenTrack");
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setHiddenClass("track");
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
   return (
-    <div className="track">
+    <div className={hiddenClass}>
       <div className="flex-container">
         <div>
           <p>{track.name}</p>

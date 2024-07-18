@@ -1,5 +1,9 @@
 .track {
   margin: 30px 20px;
+  transition: opacity 300ms ease-in;
+}
+.hiddenTrack {
+  opacity: 0;
 }
 .track p {
   margin: 5px 0px;
