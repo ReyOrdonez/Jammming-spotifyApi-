@@ -1,15 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "./searchBar.css";
 
-const SearchBar = ({ onSubmit }) => {
-  const [search, setSearch] = useState("");
-
+const SearchBar = ({ onSubmit, setTerm }) => {
   return (
     <form onSubmit={onSubmit}>
       <input
         className="searchBar"
         type="text"
-        onChange={(e) => setSearch(e.target.value)}
+        onChange={(e) => setTerm(e.target.value)}
       />
       <br />
       <button type="submit" className="searchButton">

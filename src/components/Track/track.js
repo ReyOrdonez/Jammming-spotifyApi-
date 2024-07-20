@@ -12,9 +12,9 @@ const Track = ({ track, addToPlayList, removeFromPlayList }) => {
   return (
     <div className={hiddenClass}>
       <div className="flex-container">
-        <div>
+        <div className="data">
           <p>{track.name}</p>
-          <p>
+          <p className="sub">
             {track.artist} | {track.album}
           </p>
         </div>

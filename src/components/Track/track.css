@@ -2,6 +2,12 @@
   margin: 30px 20px;
   transition: opacity 300ms ease-in;
 }
+.sub {
+  color: rgba(239, 239, 239, 0.519);
+}
+.data {
+  max-width: 80%;
+}
 .hiddenTrack {
   opacity: 0;
 }
@@ -18,7 +24,7 @@
   justify-content: space-between;
 }
 .flex-container button {
-  background: url("../../add.png") no-repeat;
+  background: url("../../add.png") no-repeat center;
   background-size: 45px;
   width: 50px;
   height: 50px;
@@ -26,7 +32,7 @@
   cursor: pointer;
 }
 .flex-container .removeButton {
-  background: url("../../remove.png") no-repeat;
+  background: url("../../remove.png") no-repeat center;
   background-size: 40px;
   width: 50px;
   height: 50px;
