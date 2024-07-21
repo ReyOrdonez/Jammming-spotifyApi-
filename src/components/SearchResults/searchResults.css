@@ -11,3 +11,20 @@
 h2 {
   margin-left: 20px;
 }
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.image-container {
+  text-align: center;
+  margin-top: 50%;
+}
+.loading {
+  height: 60px;
+  width: 60px;
+  animation: spin 700ms linear infinite;
+}

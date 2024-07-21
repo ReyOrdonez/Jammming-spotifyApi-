@@ -6,14 +6,19 @@ import spotify from "../Spotify/spotify";
 import "./App.css";
 
 function App() {
-  const [trackList, setTrackList] = useState([]);
+  const [results, setResults] = useState([]);
   const [playList, setPlayList] = useState([]);
   const [term, setTerm] = useState();
+  const [isLoading, setIsLoading] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
     if (term) {
-      spotify.getSearchResults(term).then((results) => setTrackList(results));
+      setIsLoading(true);
+      spotify.getSearchResults(term).then((results) => {
+        setResults(results);
+        setIsLoading(false);
+      });
     }
   }
 
@@ -28,9 +33,10 @@ function App() {
       <div className="container">
         <SearchResults
           className="containerItem"
-          results={trackList}
+          results={results}
           setPlayList={setPlayList}
           playList={playList}
+          isLoading={isLoading}
         />
         <PlayList
           className="containerItem"
