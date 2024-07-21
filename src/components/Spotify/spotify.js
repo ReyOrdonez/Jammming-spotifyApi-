@@ -1,4 +1,4 @@
-const clientId = "37f50205b3344a1c8a334ec826d72e2b";
+const clientId = "";
 const redirectUri = "http://localhost:3000";
 const scopes = "playlist-modify-public";
 let accessToken;
