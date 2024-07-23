@@ -32,3 +32,13 @@ h2 {
   background-color: white;
   margin: 5px 20px;
 }
+.save-button {
+  background-color: rgb(216, 98, 13);
+  border: 0px;
+  box-shadow: none;
+  border-radius: 5px;
+  font-family: nunito;
+  font-size: 1.1rem;
+  padding: 5px 15px;
+  margin-bottom: 30px;
+}

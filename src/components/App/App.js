@@ -15,6 +15,7 @@ function App() {
     e.preventDefault();
     if (term) {
       setIsLoading(true);
+      setResults([]);
       spotify.getSearchResults(term).then((results) => {
         setResults(results);
         setIsLoading(false);
@@ -42,6 +43,7 @@ function App() {
           className="containerItem"
           playList={playList}
           setPlayList={setPlayList}
+          postPlayList={spotify.postPlayList}
         />
       </div>
     </div>

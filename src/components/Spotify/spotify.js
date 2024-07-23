@@ -1,4 +1,4 @@
-const clientId = "";
+const clientId = "02c845cb02364eb490f80f9e7052326b";
 const redirectUri = "http://localhost:3000";
 const scopes = "playlist-modify-public";
 let accessToken;
@@ -39,6 +39,8 @@ const spotify = {
             name: track.name,
             album: track.album.name,
             artist: track.artists[0].name,
+            uri: track.uri,
+            id: track.id,
           }));
         } else {
           return [];
@@ -48,6 +50,57 @@ const spotify = {
       }
     } else {
       return [];
+    }
+  },
+  async postPlayList(name, tracks) {
+    spotify.getAccessToken();
+    let uris = [];
+    tracks.map((track) => uris.push(track.uri));
+    console.log(uris);
+    if (accessToken) {
+      try {
+        const headers = { Authorization: `Bearer ${accessToken}` };
+        const requestUserId = await fetch("https://api.spotify.com/v1/me", {
+          method: "GET",
+          headers: headers,
+        }).then((responseUserID) =>
+          responseUserID.json().then((json) => json.id)
+        );
+        const requestCreatePlayList = await fetch(
+          `https://api.spotify.com/v1/users/${requestUserId}/playlists`,
+          {
+            method: "POST",
+            headers: headers,
+            body: JSON.stringify({
+              name: name,
+            }),
+          }
+        ).then(async () => {
+          const requestPlayListId = await fetch(
+            "https://api.spotify.com/v1/me/playlists",
+            {
+              method: "GET",
+              headers: headers,
+            }
+          ).then((response) =>
+            response.json().then((json) => json.items[0].id)
+          );
+          const requestPostTracks = await fetch(
+            `https://api.spotify.com/v1/playlists/${requestPlayListId}/tracks`,
+            {
+              method: "POST",
+              headers: headers,
+              body: JSON.stringify({
+                uris: uris,
+              }),
+            }
+          );
+          return requestPostTracks;
+        });
+        return requestCreatePlayList;
+      } catch (error) {
+        console.log(error);
+      }
     }
   },
 };

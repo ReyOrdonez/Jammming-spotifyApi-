@@ -9,7 +9,7 @@ const SearchBar = ({ onSubmit, setTerm }) => {
         type="text"
         onChange={(e) => setTerm(e.target.value)}
       />
-      <br />
+      <div className="searchLine"></div>
       <button type="submit" className="searchButton">
         Search
       </button>
