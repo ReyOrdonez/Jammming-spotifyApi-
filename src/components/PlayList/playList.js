@@ -5,7 +5,7 @@ import Track from "../Track/track";
 const PlayList = ({ playList, setPlayList, postPlayList }) => {
   const [playListName, setPlayListName] = useState();
 
-  function handleSubmitPlaylist(e) {
+  function handleOnClick(e) {
     e.preventDefault();
     postPlayList(playListName, playList).then(() => {
       setPlayList([]);
@@ -14,7 +14,7 @@ const PlayList = ({ playList, setPlayList, postPlayList }) => {
   }
 
   return (
-    <form className="playList" onSubmit={handleSubmitPlaylist}>
+    <div className="playList">
       <h2>Play List</h2>
       <input
         type="text"
@@ -36,11 +36,11 @@ const PlayList = ({ playList, setPlayList, postPlayList }) => {
       ))}
       <br />
       <div style={{ textAlign: "center" }}>
-        <button className="save-button" type="submit">
+        <button className="save-button" type="button" onClick={handleOnClick}>
           Save to Spotify
         </button>
       </div>
-    </form>
+    </div>
   );
 };
 

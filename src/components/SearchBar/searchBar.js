@@ -7,6 +7,7 @@ const SearchBar = ({ onSubmit, setTerm }) => {
       <input
         className="searchBar"
         type="text"
+        placeholder="song, album, artist"
         onChange={(e) => setTerm(e.target.value)}
       />
       <div className="searchLine"></div>
