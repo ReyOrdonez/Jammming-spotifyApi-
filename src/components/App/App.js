@@ -10,6 +10,8 @@ function App() {
   const [playList, setPlayList] = useState([]);
   const [term, setTerm] = useState();
   const [isLoading, setIsLoading] = useState(false);
+  const [trackToPlay, setTrackToPlay] = useState(""); //audioPlayerControler
+  const [isPlaying, setIsPlaying] = useState(false); //audioPlayerControler
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -18,6 +20,7 @@ function App() {
       setResults([]);
       spotify.getSearchResults(term).then((results) => {
         setResults(results);
+        console.log(results);
         setIsLoading(false);
       });
     }
@@ -38,6 +41,8 @@ function App() {
           setPlayList={setPlayList}
           playList={playList}
           isLoading={isLoading}
+          setTrackToPlay={setTrackToPlay}
+          setIsPlaying={setIsPlaying}
         />
         <PlayList
           className="containerItem"

@@ -1,14 +1,27 @@
 import React, { useState, useEffect } from "react";
 import "./track.css";
 
-const Track = ({ track, addToPlayList, removeFromPlayList }) => {
+const Track = ({
+  track,
+  addToPlayList,
+  removeFromPlayList,
+  setTrackToPlay,
+  setIsPlaying,
+}) => {
   const [hiddenClass, setHiddenClass] = useState("hiddenTrack");
+
+  function handleOnClick() {
+    setTrackToPlay(track);
+    setIsPlaying(true);
+  }
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setHiddenClass("track");
     }, 100);
     return () => clearTimeout(timer);
   }, []);
+
   return (
     <div className={hiddenClass}>
       <div className="flex-container">
@@ -18,16 +31,29 @@ const Track = ({ track, addToPlayList, removeFromPlayList }) => {
             {track.artist} | {track.album}
           </p>
         </div>
-        {addToPlayList && (
-          <button type="submit" onClick={() => addToPlayList(track)}></button>
-        )}
-        {removeFromPlayList && (
-          <button
-            type="submit"
-            className="removeButton"
-            onClick={() => removeFromPlayList(track)}
-          ></button>
-        )}
+        <div className="agroup-container">
+          {track.preview && (
+            <button
+              type="button"
+              className="play-button"
+              onClick={handleOnClick}
+            ></button>
+          )}
+          {addToPlayList && (
+            <button
+              type="submit"
+              className="add-button"
+              onClick={() => addToPlayList(track)}
+            ></button>
+          )}
+          {removeFromPlayList && (
+            <button
+              type="submit"
+              className="removeButton"
+              onClick={() => removeFromPlayList(track)}
+            ></button>
+          )}
+        </div>
       </div>
       <div className="line"></div>
     </div>

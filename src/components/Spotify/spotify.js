@@ -34,6 +34,7 @@ const spotify = {
           },
         });
         const response = await request.json();
+        console.log(response.tracks);
         if (response.tracks) {
           return response.tracks.items.map((track) => ({
             name: track.name,
@@ -41,6 +42,8 @@ const spotify = {
             artist: track.artists[0].name,
             uri: track.uri,
             id: track.id,
+            preview: track.preview_url,
+            albumImage: track.album.images[0].url,
           }));
         } else {
           return [];
