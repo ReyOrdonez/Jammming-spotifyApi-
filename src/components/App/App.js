@@ -10,8 +10,6 @@ function App() {
   const [playList, setPlayList] = useState([]);
   const [term, setTerm] = useState();
   const [isLoading, setIsLoading] = useState(false);
-  const [trackToPlay, setTrackToPlay] = useState(""); //audioPlayerControler
-  const [isPlaying, setIsPlaying] = useState(false); //audioPlayerControler
 
   function handleSubmit(e) {
     e.preventDefault();
