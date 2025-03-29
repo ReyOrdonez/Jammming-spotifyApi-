@@ -1,5 +1,5 @@
 const clientId = "02c845cb02364eb490f80f9e7052326b";
-const redirectUri = "http://localhost:3000";
+const redirectUri = "https://reyisaacspotifyplaylistcreator.netlify.app";
 const scopes = "playlist-modify-public";
 let accessToken;
 
